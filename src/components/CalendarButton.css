@@ -1,0 +1,99 @@
+.calendar {
+    position: relative;
+    margin-top: 25px;
+}
+
+.calendar-button {
+    width: auto;
+    padding: 12px 26px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+
+    color: white;
+
+    font-family: inherit;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+            background 0.3s ease,
+            color 0.3s ease,
+            transform 0.3s ease;
+}
+
+.calendar-button:hover {
+    background: white;
+    color: var(--olive-dark);
+    transform: translateY(-2px);
+}
+
+
+/* Dropdown */
+
+.calendar-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+
+    width: 210px;
+
+    transform: translateX(-50%);
+
+    padding: 7px;
+
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+
+    border-radius: 10px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+
+    overflow: hidden;
+
+    animation: calendarMenuFade 0.2s ease-out;
+}
+
+.calendar-menu button {
+    width: 100%;
+
+    padding: 11px 15px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: var(--olive-dark);
+
+    font-family: inherit;
+    font-size: 0.9rem;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.calendar-menu button:hover {
+    background: rgba(107, 112, 92, 0.12);
+}
+
+
+/* Dropdown animation */
+
+@keyframes calendarMenuFade {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}

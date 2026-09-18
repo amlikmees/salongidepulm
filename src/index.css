@@ -1,0 +1,26 @@
+:root {
+    --olive: #6b705c;
+    --olive-dark: #4f5444;
+    --olive-light: #a5a58d;
+
+    --cream: #f7f5ef;
+    --white: #ffffff;
+
+    --text: #292b25;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--text);
+    background: var(--cream);
+    overflow-x: hidden;
+}

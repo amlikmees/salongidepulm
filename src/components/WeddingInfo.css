@@ -1,0 +1,97 @@
+.wedding-info {
+    padding: 120px 20px;
+    background: var(--olive);
+    color: var(--cream);
+}
+
+.wedding-info-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wedding-info h2 {
+    margin: 0 0 20px;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--cream);
+}
+
+.wedding-description {
+    max-width: 600px;
+    margin: 0 auto 30px;
+
+    line-height: 1.7;
+    color: rgba(247, 245, 239, 0.8);
+}
+
+.wedding-note {
+    max-width: 650px;
+    margin: 30px auto 0;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(247, 245, 239, 0.2);
+
+    color: rgba(247, 245, 239, 0.85);
+
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.wedding-details {
+    margin: 65px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+.detail {
+    padding: 10px 35px;
+}
+
+.detail:not(:last-child) {
+    border-right: 1px solid rgba(247, 245, 239, 0.25);
+}
+
+.detail h3 {
+    margin-top: 0;
+
+    color: var(--cream);
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.detail p {
+    margin: 0;
+
+    line-height: 1.7;
+    color: rgba(247, 245, 239, 0.9);
+}
+
+@media (max-width: 700px) {
+    .wedding-info {
+        padding: 80px 20px;
+    }
+
+    .wedding-info h2 {
+        font-size: 2.3rem;
+    }
+
+    .wedding-details {
+        grid-template-columns: 1fr;
+    }
+
+    .detail {
+        padding: 25px 0;
+    }
+
+    .detail:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(247, 245, 239, 0.25);
+    }
+}

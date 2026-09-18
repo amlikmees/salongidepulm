@@ -1,0 +1,141 @@
+.rsvp {
+    padding: 120px 20px;
+    background: var(--olive);
+    color: white;
+}
+
+.rsvp-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rsvp h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.rsvp p {
+    text-align: center;
+    margin: 15px 0 50px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Form */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group > label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+/* Text inputs */
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    background: var(--cream);
+    color: var(--text);
+
+    outline: none;
+
+    transition:
+            border-color 0.3s ease,
+            box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: white;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Radio buttons */
+
+.radio-group {
+    display: flex;
+    gap: 25px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+.radio-group input {
+    accent-color: var(--cream);
+}
+
+/* Submit button */
+
+button {
+    width: 100%;
+    padding: 15px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: var(--cream);
+    color: var(--olive-dark);
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+            transform 0.2s ease,
+            background 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+button:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .rsvp {
+        padding: 80px 20px;
+    }
+
+    .rsvp h2 {
+        font-size: 2.4rem;
+    }
+
+    .radio-group {
+        gap: 20px;
+    }
+}
