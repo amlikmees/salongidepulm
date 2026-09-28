@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import "./CalendarButton.css";
 
 function CalendarButton() {
     const [open, setOpen] = useState(false);
+    const [showBrowserHelp, setShowBrowserHelp] = useState(false);
 
     const event = {
         title: "Märteni & Kristel pulmadi",
@@ -24,35 +26,27 @@ function CalendarButton() {
         window.open(url, "_blank");
     }
 
-    function addToAppleCalendar() {
-        const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//MartenKristelWedding//EN
-BEGIN:VEVENT
-DTSTART:${event.start}
-DTEND:${event.end}
-SUMMARY:${event.title}
-DESCRIPTION:${event.description}
-LOCATION:${event.location}
-END:VEVENT
-END:VCALENDAR`;
+    function isFacebookBrowser() {
+        const ua = navigator.userAgent || "";
 
-        const blob = new Blob([icsContent], {
-            type: "text/calendar;charset=utf-8"
-        });
-
-        const url = URL.createObjectURL(blob);
-
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "marten-kristel-pulmad.ics";
-
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        URL.revokeObjectURL(url);
+        return (
+            ua.includes("FBAN") ||
+            ua.includes("FBAV") ||
+            ua.includes("Messenger")
+        );
     }
+
+    function addToAppleCalendar() {
+        if (isFacebookBrowser()) {
+            setOpen(false);
+            setShowBrowserHelp(true);
+            return;
+        }
+
+        window.location.href = "/marten-kristel-pulmad.ics";
+    }
+
+
 
     return (
         <div className="calendar">
@@ -74,6 +68,45 @@ END:VCALENDAR`;
                     </button>
                 </div>
             )}
+
+            {showBrowserHelp &&
+                createPortal(
+                    <div
+                        className="browser-help-overlay"
+                        onClick={() => setShowBrowserHelp(false)}
+                    >
+                        <div
+                            className="browser-help-content"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <h3>Ava leht brauseris</h3>
+
+                            <p>
+                                Apple Calendari lisamiseks ava see leht
+                                välises brauseris.
+                            </p>
+
+                            <p>
+                                Vajuta <strong>paremal üleval</strong> olevale
+                                nupule ja vali{" "}
+                                <strong>Open in external browser</strong>.
+                            </p>
+
+                            <button
+                                className="browser-help-close"
+                                onClick={() => setShowBrowserHelp(false)}
+                            >
+                                Selge
+                            </button>
+                        </div>
+
+                        <div className="browser-help-arrow">
+                            ↑
+                        </div>
+                    </div>,
+                    document.body
+                )
+            }
         </div>
     );
 }

@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MartenKristelWedding//ET
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:marten-kristel-pulmad-20270701@salongidepulm.ee
+DTSTAMP:20260928T000000Z
+DTSTART:20270701T120000Z
+DTEND:20270701T200000Z
+SUMMARY:Märteni & Kristeli pulmad
+DESCRIPTION:Ootame sind meiega seda erilist päeva tähistama!
+LOCATION:La Rahtla küün\, Saaremaa
+END:VEVENT
+END:VCALENDAR
