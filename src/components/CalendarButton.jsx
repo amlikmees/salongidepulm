@@ -7,7 +7,7 @@ function CalendarButton() {
     const [showBrowserHelp, setShowBrowserHelp] = useState(false);
 
     const event = {
-        title: "Märteni & Kristel pulmadi",
+        title: "Märteni & Kristeli pulmad",
         description: "Ootame sind meiega seda erilist päeva tähistama!",
         location: "La Rahtla küün, Saaremaa",
 
